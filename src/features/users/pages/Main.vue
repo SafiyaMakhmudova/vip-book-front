@@ -1,4 +1,5 @@
 <template>
+  <!-- 1-section -->
   <main class="flex justify-between bg-gradient-to-t from-green-200 to-white">
     <div class="ml-14 w-[40%]">
       <h1 class="text-5xl text-text py-5 font-medium">
@@ -25,48 +26,47 @@
       <img class="w-[12%]" src="@/assets/img/main/Vector 26.png" alt="" />
     </div>
   </main>
+  <!-- 2-section -->
   <section class="px-12 py-28">
-    <div class="flex items-center justify-between">
-      <h1 class="text-primary2 font-semibold text-3xl">Explore Categories</h1>
-      <div class="flex gap-8">
-        <a :class="{ 'text-red': isActive }" class="text-black" to="/">Books</a>
-
-        <router-link to="/">Stationery goods</router-link>
-        <router-link to="/">Gifts</router-link>
-      </div>
-    </div>
-
+    <Section>Explore Categories</Section>
     <div v-if="loading"><Loading /></div>
     <div v-else>
       <div  class="flex gap-6">
       <categoryCard :items = 'categoryMaxList' />
       </div>
-      <div class="flex justify-between mx-auto w-[18%]">
-        <button class="rounded-full bg-[#E9E9E9]" @click="setPagination1">
-          <i class="bx bx-left-arrow-alt text-primary2 text-2xl px-2 py-1"></i>
-        </button>
-        <button
-          class="rounded-full bg-[#E9E9E9] text-primary2 text-2xl px-2 py-1"
-          @click="setPagination2"
-        >
-          <i class="bx bx-right-arrow-alt"></i>
-        </button>
-      </div>
     </div>
+    <Pagination/>
   </section>
+  <!-- 3-section -->
+  <div class="px-12 py-10">
+    <sectionBook>Featured Products</sectionBook>
+    <div v-if="loadingBook"><Loading/></div>
+    <div v-else>
+      <div class="flex gap-6">
+      <bookCard :items="bookList"/>
+    </div>
+    </div>
+    <Pagination/>
+  </div>
 </template>
 
 <script setup>
 import baseButton from "@/components/base/base-button.vue";
-import categoryCard from "../../products/components/category-card";
-import { useCategoryMax } from "@/features/categoryMaxs/composables/index";
 import Loading from "@/components/loading.vue";
-const { loading, categoryMaxList, setPagination1, setPagination2 } = useCategoryMax();
+import Section from "@/components/section"
+import sectionBook from "@/components/sectionBook.vue";
+import Pagination from "@/components/paginationn"
+import bookCard from '../../products/components/book-card'
+import categoryCard from "../../categoryMaxs/components/category-card";
+
+import { useCategoryMax } from "@/features/categoryMaxs/composables/index";
+import {useBooks} from '@/features/products/composables/index'
+
+const { loading, categoryMaxList } = useCategoryMax();
+const { bookList, loadingBook} = useBooks()
 
 </script>
 
 <style scoped>
-.router-link-exact-active {
-  color: #43BB00;
-}
+
 </style>
