@@ -8,6 +8,7 @@ export default {
       footerColor:'#DEF9EC',
       buttonColor:'#FFB531',
       primary2:'#1A4900',
+      clifford: '#da373d',
     }
   },
   screens:{
