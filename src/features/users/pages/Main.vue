@@ -1,29 +1,27 @@
 <template>
-  <!-- 1-section -->
-  <main class="flex justify-between bg-gradient-to-t from-green-200 to-white">
-    <div class="ml-14 w-[40%]">
-      <h1 class="text-5xl text-text py-5 font-medium">
+  <main class="px-10 h-screen mid:h-[550px] flex flex-col justify-evenly items-center mid:flex-row border-2  border-red-400  bg-gradient-to-t from-green-200 to-white">
+    <div class="flex flex-1 flex-col border-4 justify-evenly">
+      <h1 class="text-6xl text-text py-5 font-bold">
         Explore Our store the best of all the time
       </h1>
-      <span class="text-[#666666]">Save up to 60% off on your first order</span>
-      <baseButton class="bg-buttonColor py-3 px-12 mt-12">
+      <span class="text-[#666666] text-xl">Save up to 60% off on your first order</span>
+      <baseButton class="bg-buttonColor py-3 px-12 mt-12 text-base font-semibold ">
         Shop now
-
-        <i class="bx bx-up-arrow-alt"></i>
+<!-- buttondagi  arrow rasm ekan  -->
+        <i class="bx bx-up-arrow-alt rotate-45 text-2xl"></i>
       </baseButton>
     </div>
-    <div class="px-12 border-4">
-      <img
-        class="w-[70%] border-4"
-        src="@/assets/img/main/Store_Screenshots_Book-1568632074.svg"
+    <div class="border-4 border-red-400  flex-1 justify-center items-center">
+      <div class="relative m-auto">
+
+        <img
+        class="inline-block m-auto"
+        src="@/assets/img/main/main_left_01.png"
         alt=""
-      />
-      <img
-        class="border-2 w-[30%]"
-        src="@/assets/img/main/creative-composition-with-books-flower-removebg-preview.png"
-        alt=""
-      />
-      <img class="w-[12%]" src="@/assets/img/main/Vector 26.png" alt="" />
+        />
+        <img class="flex mid:hidden  absolute bottom-0 top-[-50px] w-24 " src="@/assets/img/main/main_mobile_arrow.png" alt="" />
+        <img class="hidden mid:flex absolute bottom-0 left-[-90px]" src="@/assets/img/main/Vector 26.png" alt="" />
+      </div>
     </div>
   </main>
   <!-- 2-section -->
