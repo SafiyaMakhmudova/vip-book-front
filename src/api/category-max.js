@@ -1,10 +1,10 @@
-import api from "../plugins/axios"
+import api from "@/plugins/axios"
 
-const url1 = import.meta.env.VITE_BASE_URL
+const url = import.meta.env.VITE_BASE_URL
 
 export function addCategoryApi(createFormData){
     return api({
-        url:url1+"/api/categoryMax/create",
+        url:url+"/api/categoryMax/create",
         method:'post',
         data:createFormData,
         headers:{
@@ -17,10 +17,10 @@ export function addCategoryApi(createFormData){
 }
 
 export function findAllBookCategoryApi(pagination){
-    return api.get(url1+`category-max/all/book/category?limit=${pagination.limit}&skip=${pagination.skip}`)
+    return api.get(url+`category-max/all/book/category?limit=${pagination.limit}&skip=${pagination.skip}`)
 }
 
-export function findAllCansCategoryApi(){
-    return api.get(url1+`category-max/all/canstavar/category?limit=${pagination.limit}&skip=${pagination.skip}`)
+export function findAllCansCategoryApi(pagination){
+    return api.get(url+`category-max/all/canstavar/category?limit=${pagination.limit}&skip=${pagination.skip}`)
 }
 
