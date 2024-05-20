@@ -1,5 +1,8 @@
 <template>
+  <div class=" flex justify-center items-center w-full mx-auto ">
+    
     <span class="loader"></span>
+  </div>
 </template>
 
 <script setup>
@@ -10,9 +13,8 @@
 .loader {
   width: 48px;
   height: 48px;
-  border-width: 3px;
-  border-style: dashed solid  solid dotted;
-  border-color: #FF3D00 #FF3D00 transparent #FF3D00;
+  border: 3px solid black;
+  border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -21,12 +23,12 @@
 }
 .loader::after {
   content: '';  
-  box-sizing: border-box;
   position: absolute;
+  box-sizing: border-box;
   left: 20px;
   top: 31px;
   border: 10px solid transparent;
-  border-right-color: #FF3D00;
+  border-right-color: black;
   transform: rotate(-40deg);
 }
 
@@ -38,6 +40,4 @@
     transform: rotate(360deg);
   }
 } 
-
-
 </style>

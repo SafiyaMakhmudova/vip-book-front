@@ -14,3 +14,24 @@ export function findAllCanstavar(pagination) {
       `books/all/canstavar?limit=${pagination.limit}&skip=${pagination.skip}`
   );
 }
+
+export function findAllBookCategoryMiniApi(pagination, categoryMini){
+  return api.get(url+`books/search?name=${categoryMini.name}&limit=${pagination.limit}&skip=${pagination.skip}`)
+}
+
+export function findTopRatedBookApi(){
+  return api.get(url+'books/topRated')
+}
+
+export function findTopSoldBookApi(){
+  return api.get(url+'books/soldRated')
+}
+
+export function SearchBookApi(data){
+  return api.post(url+'books/search/book', data)
+}
+
+export function SingleBookApi(id){
+  return api.get(url+`books/${id}`)
+}
+

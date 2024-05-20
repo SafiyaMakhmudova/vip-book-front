@@ -9,6 +9,7 @@ export const useCategoryMaxStore = defineStore("categoryMax", {
     categoryMaxList: [],
     loading: false,
     id: 0,
+    options:[]
   }),
   actions: {
     async fetchAllCategory(data) {
@@ -20,7 +21,18 @@ export const useCategoryMaxStore = defineStore("categoryMax", {
         }
         this.loading = false;
         this.categoryMaxList = res?.data?.limit_cateMaxs;
-        this.id = 1;
+        this.options =this.categoryMaxList.map(category => {
+          return {
+            label: category.name,
+            value: category.id,
+            children: category.book.map(book => {
+              return {
+                label: book.name,
+                value: book.id
+              }
+            })
+          }
+        })
       } catch (error) {
         this.loading = false;
         errorToast("Not found");
@@ -35,11 +47,11 @@ export const useCategoryMaxStore = defineStore("categoryMax", {
         }
         this.loading = false;
         this.categoryMaxList = res?.data?.limit_cateMaxs;
-        this.id = 2;
       } catch (error) {
         this.loading = false;
         errorToast("Not found");
       }
     },
+  
   },
 });

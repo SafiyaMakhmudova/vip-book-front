@@ -1,34 +1,34 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { layoutMiddleware } from './middlewares/index';
-import i18n from '@/plugins/i18n';
+import { createRouter, createWebHistory } from "vue-router";
+import { layoutMiddleware } from "./middlewares/index";
+import i18n from "@/plugins/i18n";
 
 // import all constants
-import { Layouts } from '@/constants/layouts';
+import { Layouts } from "@/constants/layouts";
 
 // import all features routes
-import userRoutes from '@/features/users/router';
+import userRoutes from "@/features/users/router";
+import productRoutes from "@/features/products/router";
 // import decodeJwt from '@/functions/tokenParser';
 
 const routes = [
-    ...userRoutes,
-    // {
-    //     path: '/:pathMatch(.*)*',
-    //     name: authRoute.RT_NOT_FOUND,
-    //     component: () => import('@/views/NotFound.vue'),
-    //     meta: {
-    //       layouts:Layouts.AUTH,
-    //       requiresAuth: false,
-    //       title: authRoute.MT_NOT_FOUND
-    //     }
-    //   },
-
+  ...userRoutes,
+  ...productRoutes,
+  {
+    path: "/:pathMatch(.*)*",
+    name: "Not Found",
+    component: () => import("@/views/NotFound.vue"),
+    meta: {
+      layouts: Layouts.AUTH,
+      requiresAuth: false,
+      title: "Not Found",
+    },
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 });
-
 
 router.beforeResolve(async (to) => {
   await layoutMiddleware(to);
@@ -38,7 +38,6 @@ router.beforeResolve(async (to) => {
 function updateMeta(title) {
   document.title = title;
 }
-
 
 export { updateMeta };
 export default router;

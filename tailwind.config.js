@@ -2,6 +2,7 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {extend:{
+ 
     colors:{
       primary:'#85DF00',
       text:'#1A4900',
@@ -9,6 +10,7 @@ export default {
       buttonColor:'#FFB531',
       primary2:'#1A4900',
       clifford: '#da373d',
+      activeColor:'#43BB00'
     }
   },
   screens:{

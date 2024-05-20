@@ -1,6 +1,6 @@
 <template>
   <!-- Modal 1 -->
-  <div class="text-left relative mb-[200px]">
+  <div class="text-left relative mb-[200px] mt-24">
     <div class="bg-[#FFE7B7] pt-[83px] pl-[240px]   modal1 pb-[180px] pr-[124px]">
       <h2 class="text-text text-3xl mb-5 font-semibold modal1h2 ">What we can offer your SaaS Business</h2>
       <p class="text-[#665C49] text-xl font-medium modal1p">

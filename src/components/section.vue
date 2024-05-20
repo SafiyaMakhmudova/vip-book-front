@@ -4,10 +4,20 @@
       <slot />
     </h1>
     <div class="flex gap-8">
-      <a class="text-black cursor-pointer" to="/" @click="exchangeApi">Books</a>
+      <a
+        class="text-black cursor-pointer"
+        :class="{ active: activeeBook }"
+        @click="exchangeApi"
+        >Books</a
+      >
 
-      <router-link to="/" @click="exchangeApi2">Stationery goods</router-link>
-      <router-link to="/">Gifts</router-link>
+      <a
+        :class="{ activee: activeeCanstavar }"
+        class="text-black cursor-pointer"
+        @click="exchangeApi2"
+        >Stationery goods</a
+      >
+      <a class="text-black cursor-pointer">Gifts</a>
     </div>
   </div>
 </template>
@@ -15,7 +25,15 @@
 <script setup>
 import { useCategoryMax } from "@/features/categoryMaxs/composables/index";
 
-const { exchangeApi, exchangeApi2 } = useCategoryMax();
+const { activeeBook, activeeCanstavar, exchangeApi, exchangeApi2 } =
+  useCategoryMax();
 </script>
 
-<style scoped></style>
+<style scoped>
+.active {
+  color: #43bb00;
+}
+.activee {
+  color: #43bb00;
+}
+</style>

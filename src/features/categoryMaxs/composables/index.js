@@ -2,13 +2,19 @@ import { storeToRefs } from "pinia";
 import { useRoute, useRouter } from "vue-router";
 import { useCategoryMaxStore } from "@/features/categoryMaxs/store/CategoryMaxStore";
 import { useBookStore } from "@/features/products/store/BooksStore";
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted, ref } from "vue";
 
 export const useCategoryMax = () => {
   const paginations = reactive({
     limit: 6,
     skip: 1,
   });
+
+
+  const  isDropdownOpen = ref(false)
+  const activeeBook = ref(false);
+  const activeeCanstavar = ref(false);
+
   const store = useCategoryMaxStore();
   const storBook = useBookStore();
   const router = useRouter();
@@ -18,17 +24,28 @@ export const useCategoryMax = () => {
   const { fetchAllCategory, fetchAllCategory2 } = useCategoryMaxStore();
 
   const { bookList } = storeToRefs(storBook);
-  const { fetchAllBooks, fetchAllCanstavar } = useBookStore();
+  const { fetchAllBooks, fetchAllCanstavar, } = useBookStore();
 
   onMounted(async () => {
     await fetchAllCategory(paginations);
   });
 
+function toggleDropdown() {
+  isDropdownOpen.value = !isDropdownOpen.value;
+}
   async function exchangeApi2() {
+    activeeCanstavar.value = !activeeCanstavar.value;
+    activeeBook.value = false;
+    paginations.skip = 1
+    id.value = 2
     await fetchAllCategory2(paginations);
   }
 
   async function exchangeApi() {
+    activeeBook.value = !activeeBook.value;
+    activeeCanstavar.value = false;
+    paginations.skip = 1
+    id.value = 1
     await fetchAllCategory(paginations);
   }
 
@@ -47,7 +64,7 @@ export const useCategoryMax = () => {
       } else if (id.value == 4) {
         //4-books canstavar
         await fetchAllCanstavar(paginations);
-      }
+      } 
     }
   }
 
@@ -57,22 +74,24 @@ export const useCategoryMax = () => {
       if (id.value == 1) {
         await fetchAllCategory(paginations);
       } else if (id.value == 2) {
+
         await fetchAllCategory2(paginations);
       } else if (id.value == 3) {
-        console.log("book1");
         if (bookList.value.length > 5) {
+
           await fetchAllBooks(paginations);
         } else {
           paginations.skip -= 1;
         }
       } else if (id.value == 4) {
         if (bookList.value.length > 5) {
+
           await fetchAllCanstavar(paginations);
         } else {
           paginations.skip -= 1;
         }
       }
-    }
+    } 
   }
   return {
     loading,
@@ -86,5 +105,9 @@ export const useCategoryMax = () => {
     exchangeApi2,
     exchangeApi,
     id,
+    activeeBook,
+    activeeCanstavar,
+    toggleDropdown,
+    isDropdownOpen
   };
 };
