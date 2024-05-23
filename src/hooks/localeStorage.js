@@ -5,6 +5,8 @@ const { cart, totalPrice, singleCart } = useBooks();
 // Add to LocalStorage
 export const addToCart = (item) => {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if(cart) {
+    
   let existingIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
   if (existingIndex !== -1) {
     cart[existingIndex].quantity++;
@@ -12,16 +14,19 @@ export const addToCart = (item) => {
     cart.push({ ...item, quantity: 1 });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  successToast("Product added to cart", {   timeout: 2000});
+  successToast("Product added to cart", { timeout: 2000 });
 
   fetchCartFromLocalStorage();
   getProductById(item.id);
+  }
 };
 
 // Get LocalStorage
 export const fetchCartFromLocalStorage = () => {
   const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.value = storedCart;
+  if (storedCart) {
+    cart.value = storedCart;
+  }
 };
 
 // Remove LoclStorage
@@ -78,7 +83,7 @@ export function getProductById(id) {
     if (singleCart.value) {
       return singleCart;
     } else {
-      return
+      return;
     }
   } else {
     return;

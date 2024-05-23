@@ -216,12 +216,8 @@ export const useBooks = () => {
 
   }
   
-  async function paymentNext() {
-    await router.push({name:'Success'})
-  }
   
   return {
-    paymentNext,
     options,
     info,
     rewiew,

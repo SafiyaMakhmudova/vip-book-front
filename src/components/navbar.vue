@@ -17,7 +17,7 @@
                   {{ category.name }}
                 </h3>
                 <div v-for="book in category.book.slice(0, 6)">
-                  <a href='javascript:void(0)' @click="singlePage(book?.id)" >{{ book.name }}</a>
+                  <a href='javascript:void(0)' @click="singlePage(book?.id)">{{ book.name }}</a>
                 </div>
               </div>
             </div>
@@ -50,13 +50,15 @@
 
         <router-link to="/basket" class="relative cursor-pointer " v-if="cart.length">
           <i class="bx bx-basket text-green-950 text-2xl ml-3 hover:text-primary "></i>
-          <div 
+          <div
             class="cart-item-count absolute bg-[#FFB531] text-black rounded-full w-[20px] h-[20px] flex items-center justify-center text-sm  ">
             {{ cart.length }}</div>
         </router-link>
         <div v-else>
-          <i class="bx bx-basket text-green-950 text-2xl ml-3 hover:text-primary "></i>
-              
+          <router-link to="/basket">
+            <i class="bx bx-basket text-green-950 text-2xl ml-3 hover:text-primary "></i>
+
+          </router-link>
         </div>
       </div>
 
@@ -95,16 +97,16 @@ import { useBooks } from "@/features/products/composables/index";
 const { cart } = useBooks();
 
 import router from '@/router'
-import {productRoute} from '@/constants/routes/product'
+import { productRoute } from '@/constants/routes/product'
 
 async function singlePage(id) {
- await router.push({ name: productRoute.RT_SINGLE_PRODUCT, params: { id } })
+  await router.push({ name: productRoute.RT_SINGLE_PRODUCT, params: { id } })
 
 }
 onMounted(() => {
-    fetchCartFromLocalStorage();
-  });
-  
+  fetchCartFromLocalStorage();
+});
+
 
 
 </script>
