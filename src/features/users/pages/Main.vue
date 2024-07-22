@@ -10,13 +10,13 @@
       <span class="text-[#666666] text-xl"
         >Save up to 60% off on your first order</span
       >
-      <baseButton
-        class="bg-buttonColor flex gap-2 items-center py-2 px-12 mt-10 text-base rounded-xl font-semibold"
+      <button
+        class="bg-buttonColor flex gap-2 items-center py-2 px-12 mt-10 text-base w-[35%] rounded-xl font-semibold"
       >
         Shop now
         <!-- buttondagi arrow rasm ekan -->
         <img src="@/assets/vectors/call_received.png" alt="">
-      </baseButton>
+    </button>
     </div>
     <div class="flex-1 justify-center items-center">
       <div class="relative m-auto">
@@ -78,11 +78,11 @@
       <span class="text-[#B5B5B5] text-base  "
         >Shop $50 product and get free delivery anywhre.</span
       >
-      <baseButton
+      <button
         class="bg-buttonColor py-2 rounded-xl text-white flex items-center px-3 mt-6 text-sm  font-semibold"
         >Shop Now
         <i class="bx bx-right-arrow-alt text-white mt-1"></i>
-      </baseButton>
+      </button>
     </div>
     <div class="bg-[#DEF9EC] w-[50%] py-10 px-14  mb-12">
       <button
@@ -94,11 +94,11 @@
         Islamic books are on sale for Eid
       </h1>
       <span class="text-[#B5B5B5] text-base">Save up to 60% off on your first order</span>
-      <baseButton
+      <button
         class="bg-buttonColor py-2 rounded-xl text-white flex items-center px-4 mt-6 text-sm font-semibold"
         >Order Now
         <i class="bx bx-right-arrow-alt text-white mt-1"></i>
-      </baseButton>
+      </button>
     </div>
   </div>
   <!-- 5-section -->

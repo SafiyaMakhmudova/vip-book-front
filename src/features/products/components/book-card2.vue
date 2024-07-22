@@ -21,7 +21,7 @@
 
         <n-slider  :default-value="(item?.sold_rating*100)/item?.total_count" disabled />
         <h3 class="text-primary2 font-semibold  text-xs   pb-2">Sold {{ item?.sold_rating }}/{{ item?.total_count }}</h3>
-        <baseButton class="bg-[#43BB00] text-white w-full rounded-xl  py-2 hover:bg-green-700 duration-150 ease-out" @click="addToCart(item)"> <i class='bx bxs-basket'></i> Add to cart</baseButton>
+        <button class="bg-[#43BB00] text-white w-full rounded-xl  py-2 hover:bg-green-700 duration-150 ease-out" @click="addToCart(item)"> <i class='bx bxs-basket'></i> Add to cart</button>
     </div>
 </template>
 

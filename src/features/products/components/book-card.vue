@@ -31,9 +31,9 @@
         </h3>
 
         <div class="pt-4">
-          <baseButton class="bg-[#43BB00] hover:bg-green-600 duration-300 ease-out   w-[75px] h-[27px] text-white rounded-xl"  @click="addToCart(item)">
+          <button class="bg-[#43BB00] hover:bg-green-600 duration-300 ease-out   w-[75px] h-[27px] text-white rounded-xl"  @click="addToCart(item)">
             <i class="bx bxs-basket"></i>
-            Add</baseButton
+            Add</button
           >
         </div>
       </div>

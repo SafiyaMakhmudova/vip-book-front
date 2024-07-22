@@ -68,11 +68,11 @@
             ></i>
           </div>
 
-          <baseButton
+          <button
             class="bg-primary hover:bg-green-600 text-white flex px-20 py-3 items-center gap-1 rounded-xl"
             @click="addToCart(singleProduct)"
             ><img src="@/assets/vectors/Vector.png" alt="" /> Add to
-            cart</baseButton
+            cart</button
           >
         </div>
       </div>
