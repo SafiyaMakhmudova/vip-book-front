@@ -7,7 +7,7 @@
     <div>
       <img
         class="w-[80px] h-[80px] cursor-pointer"
-        :src="'http://localhost:4010/' + book.image"
+        :src="'https://adamsgroup.uz/' + book.image"
         alt=""
         @click="singlePage(book?.id)"
       />

@@ -6,7 +6,7 @@
   <div class="flex justify-center" >
     <img
       class="w-[124px] h-[190px] cursor-pointer"
-      :src="'http://localhost:4010/' + item.image"
+      :src="'https://adamsgroup.uz/' + item.image"
       alt="" 
       @click="singlePage(item?.id)"
     />

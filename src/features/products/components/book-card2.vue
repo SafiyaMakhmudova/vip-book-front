@@ -1,6 +1,6 @@
 <template>
     <div class="border-2 w-[250px] h-[380px] mt-10 px-2" v-for="item in items">
-        <img  class="mx-auto w-[137px] h-[190px] py-3 cursor-pointer" :src="'http://localhost:4010/' + item.image" alt="" @click="singlePage(item?.id)">
+        <img  class="mx-auto w-[137px] h-[190px] py-3 cursor-pointer" :src="'https://adamsgroup.uz/' + item.image" alt="" @click="singlePage(item?.id)">
         <span class="text-[#ADADAD]">{{ item?.category_Max.name }}</span>
       
         <h3 class="text-primary2 font-semibold ">{{ item?.name }}</h3>

@@ -4,7 +4,7 @@
       <div>
         <img
           class="w-[304px] h-[378px] shadow-2xl rounded-md"
-          :src="'http://localhost:4010/' + singleProduct.image"
+          :src="'https://adamsgroup.uz/' + singleProduct.image"
           alt=""
         />
       </div>
@@ -117,7 +117,7 @@
         <div class="pl-2 pt-3">
           <img
             class="w-[36px] h-[54px]"
-            :src="'http://localhost:4010/' + singleProduct.image"
+            :src="'https://adamsgroup.uz/' + singleProduct.image"
             alt=""
           />
         </div>

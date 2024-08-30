@@ -2,7 +2,7 @@
     <div v-for="item in items" :key="item.id" class=" w-[550px] flex pl-14 items-center border-b-2 mt-1 mb-3 h-[237px] p-2 bg-[#F8F8F8] rounded-md  ">
         <div class="flex justify-around  ">
             <div class="w-[30%]  bg-[#F8F8F8]">
-                <img @click="singlePage(item?.id)" class="cursor-pointer  w-[100px] h-[152px] mx-auto" :src="'http://localhost:4010/' + item.image" alt="" />
+                <img @click="singlePage(item?.id)" class="cursor-pointer  w-[100px] h-[152px] mx-auto" :src="'https://adamsgroup.uz/' + item.image" alt="" />
             </div>
             <div class="w-[40%] px-1 ml-2">
                 <h2 class="text-primary2 text-2xl ">{{ item.name }}</h2>
